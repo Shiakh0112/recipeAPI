@@ -13,7 +13,7 @@ A RESTful API for managing recipes built with Node.js, Express.js, and MongoDB.
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/yourusername/recipe-api.git
+git clone https://github.com/Shiakh0112/recipeAPI.git
 cd recipe-api
 
 # 2. Install dependencies
