@@ -1,0 +1,109 @@
+{
+  "info": {
+    "name": "Recipe API",
+    "description": "Complete CRUD API for managing recipes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Recipe",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Chocolate Chip Cookies\",\n  \"ingredients\": [\n    \"2 cups all-purpose flour\",\n    \"1 cup butter\",\n    \"1 cup sugar\",\n    \"2 eggs\",\n    \"2 cups chocolate chips\"\n  ],\n  \"instructions\": \"Mix butter and sugar until creamy. Add eggs and beat well. Gradually stir in flour. Fold in chocolate chips. Drop spoonfuls onto baking sheet. Bake at 350°F for 12 minutes.\",\n  \"cookingTime\": 25,\n  \"servings\": 24,\n  \"category\": \"Dessert\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/recipes",
+          "host": ["{{base_url}}"],
+          "path": ["api", "recipes"]
+        },
+        "description": "Create a new recipe with all required fields"
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Recipes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/recipes",
+          "host": ["{{base_url}}"],
+          "path": ["api", "recipes"]
+        },
+        "description": "Retrieve all recipes from the database"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Recipe by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/recipes/{{recipe_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["api", "recipes", "{{recipe_id}}"]
+        },
+        "description": "Retrieve a single recipe by its ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Recipe",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cookingTime\": 30,\n  \"servings\": 30\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/recipes/{{recipe_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["api", "recipes", "{{recipe_id}}"]
+        },
+        "description": "Update an existing recipe by ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Recipe",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/recipes/{{recipe_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["api", "recipes", "{{recipe_id}}"]
+        },
+        "description": "Delete a recipe by ID"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000",
+      "type": "string"
+    },
+    {
+      "key": "recipe_id",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
