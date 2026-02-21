@@ -4,8 +4,8 @@ A RESTful API for managing recipes built with Node.js, Express.js, and MongoDB.
 
 ## 🚀 Live Demo
 
-- **GitHub Repository**: `https://github.com/yourusername/recipe-api`
-- **Live API**: `https://your-app-name.onrender.com`
+- **GitHub Repository**: `https://github.com/Shiakh0112/recipeAPI`
+- **Live API**: `https://recipeapi-517n.onrender.com/`
 
 ---
 
