@@ -31,15 +31,15 @@ npm start
 
 ## 📡 API Endpoints
 
-**Base URL:** `http://localhost:3000/api`
+**Base URL:** `https://recipeapi-517n.onrender.com/api`
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/recipes` | Create recipe |
-| GET | `/recipes` | Get all recipes |
-| GET | `/recipes/:id` | Get single recipe |
-| PUT | `/recipes/:id` | Update recipe |
-| DELETE | `/recipes/:id` | Delete recipe |
+| Method | Endpoint       | Description       |
+| ------ | -------------- | ----------------- |
+| POST   | `/recipes`     | Create recipe     |
+| GET    | `/recipes`     | Get all recipes   |
+| GET    | `/recipes/:id` | Get single recipe |
+| PUT    | `/recipes/:id` | Update recipe     |
+| DELETE | `/recipes/:id` | Delete recipe     |
 
 ---
 
@@ -48,10 +48,11 @@ npm start
 ### Test 1: Create Recipe ✅
 
 **Method:** `POST`  
-**URL:** `http://localhost:3000/api/recipes`  
+**URL:** `https://recipeapi-517n.onrender.com/api/recipes`  
 **Headers:** `Content-Type: application/json`
 
 **Body (Copy & Paste):**
+
 ```json
 {
   "title": "Chocolate Chip Cookies",
@@ -70,6 +71,7 @@ npm start
 ```
 
 **✅ Success Response:**
+
 ```json
 {
   "success": true,
@@ -89,9 +91,10 @@ npm start
 ### Test 2: Get All Recipes ✅
 
 **Method:** `GET`  
-**URL:** `http://localhost:3000/api/recipes`
+**URL:** `https://recipeapi-517n.onrender.com/api/recipes`
 
 **✅ Success Response:**
+
 ```json
 {
   "success": true,
@@ -105,11 +108,12 @@ npm start
 ### Test 3: Get Single Recipe ✅
 
 **Method:** `GET`  
-**URL:** `http://localhost:3000/api/recipes/YOUR_RECIPE_ID`
+**URL:** `https://recipeapi-517n.onrender.com/api/recipes/YOUR_RECIPE_ID`
 
 **Replace `YOUR_RECIPE_ID` with the `_id` you copied from Test 1**
 
 **✅ Success Response:**
+
 ```json
 {
   "success": true,
@@ -122,10 +126,11 @@ npm start
 ### Test 4: Update Recipe ✅
 
 **Method:** `PUT`  
-**URL:** `http://localhost:3000/api/recipes/YOUR_RECIPE_ID`  
+**URL:** `https://recipeapi-517n.onrender.com/api/recipes/YOUR_RECIPE_ID`  
 **Headers:** `Content-Type: application/json`
 
 **Body (Copy & Paste):**
+
 ```json
 {
   "cookingTime": 30,
@@ -134,6 +139,7 @@ npm start
 ```
 
 **✅ Success Response:**
+
 ```json
 {
   "success": true,
@@ -147,9 +153,10 @@ npm start
 ### Test 5: Delete Recipe ✅
 
 **Method:** `DELETE`  
-**URL:** `http://localhost:3000/api/recipes/YOUR_RECIPE_ID`
+**URL:** `https://recipeapi-517n.onrender.com/api/recipes/YOUR_RECIPE_ID`
 
 **✅ Success Response:**
+
 ```json
 {
   "success": true,
@@ -163,6 +170,7 @@ npm start
 ## 🎯 More Test Recipes (Copy & Paste)
 
 ### Recipe 2: Pasta Carbonara
+
 ```json
 {
   "title": "Pasta Carbonara",
@@ -182,6 +190,7 @@ npm start
 ```
 
 ### Recipe 3: Banana Smoothie
+
 ```json
 {
   "title": "Banana Smoothie",
@@ -200,6 +209,7 @@ npm start
 ```
 
 ### Recipe 4: Scrambled Eggs
+
 ```json
 {
   "title": "Scrambled Eggs",
@@ -218,6 +228,7 @@ npm start
 ```
 
 ### Recipe 5: Chicken Biryani
+
 ```json
 {
   "title": "Chicken Biryani",
@@ -239,6 +250,7 @@ npm start
 ```
 
 ### Recipe 6: Chocolate Cake
+
 ```json
 {
   "title": "Chocolate Cake",
@@ -263,14 +275,17 @@ npm start
 ## ⚠️ Error Testing (Copy & Paste)
 
 ### Test: Missing Required Fields
+
 ```json
 {
   "title": "Test"
 }
 ```
+
 **Expected:** 400 Error - Validation failed
 
 ### Test: Invalid Category
+
 ```json
 {
   "title": "Test Recipe",
@@ -281,9 +296,11 @@ npm start
   "category": "InvalidCategory"
 }
 ```
+
 **Expected:** 400 Error - Invalid category
 
 ### Test: Short Title
+
 ```json
 {
   "title": "AB",
@@ -294,36 +311,40 @@ npm start
   "category": "Dinner"
 }
 ```
+
 **Expected:** 400 Error - Title too short
 
 ---
 
 ## 📝 Recipe Schema Rules
 
-| Field | Type | Required | Validation |
-|-------|------|----------|------------|
-| title | String | Yes | Min 3 characters |
-| ingredients | Array | Yes | Min 1 item |
-| instructions | String | Yes | Min 10 characters |
-| cookingTime | Number | Yes | Min 1 minute |
-| servings | Number | Yes | Min 1 serving |
-| category | String | Yes | Breakfast/Lunch/Dinner/Dessert/Snack/Beverage |
+| Field        | Type   | Required | Validation                                    |
+| ------------ | ------ | -------- | --------------------------------------------- |
+| title        | String | Yes      | Min 3 characters                              |
+| ingredients  | Array  | Yes      | Min 1 item                                    |
+| instructions | String | Yes      | Min 10 characters                             |
+| cookingTime  | Number | Yes      | Min 1 minute                                  |
+| servings     | Number | Yes      | Min 1 serving                                 |
+| category     | String | Yes      | Breakfast/Lunch/Dinner/Dessert/Snack/Beverage |
 
 ---
 
 ## 🚀 Deployment on Render
 
 ### Step 1: MongoDB Atlas Setup
+
 1. Go to [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
 2. Create free account → Create Cluster (M0 Free)
 3. Database Access → Add User (username/password)
 4. Network Access → Add IP: `0.0.0.0/0`
 5. Connect → Get connection string:
+
 ```
 mongodb+srv://username:password@cluster.mongodb.net/recipeDB
 ```
 
 ### Step 2: Push to GitHub
+
 ```bash
 git init
 git add .
@@ -334,6 +355,7 @@ git push -u origin main
 ```
 
 ### Step 3: Deploy on Render
+
 1. Go to [render.com](https://render.com) → Sign up
 2. New + → Web Service
 3. Connect GitHub repository
@@ -346,9 +368,11 @@ git push -u origin main
 6. Create Web Service → Wait 5-10 minutes
 
 ### Step 4: Test Live API
+
 Your API: `https://recipe-api-xxxx.onrender.com`
 
 **Update Postman URLs to:**
+
 ```
 https://recipe-api-xxxx.onrender.com/api/recipes
 ```
@@ -358,6 +382,7 @@ https://recipe-api-xxxx.onrender.com/api/recipes
 ## 🔧 Troubleshooting
 
 ### Port Already in Use
+
 ```bash
 # Windows
 netstat -ano | findstr :3000
@@ -365,11 +390,13 @@ taskkill /PID <PID> /F
 ```
 
 ### MongoDB Not Connected
+
 - Check if MongoDB is running: `mongod`
 - Verify `.env` file exists
 - Check connection string format
 
 ### Module Not Found
+
 ```bash
 npm install
 ```
@@ -406,6 +433,7 @@ recipe-api/
 - [ ] README.md complete
 
 **Submit:**
+
 - GitHub URL: `https://github.com/yourusername/recipe-api`
 - Live API URL: `https://recipe-api-xxxx.onrender.com`
 
